@@ -5,6 +5,7 @@ from kivy.lang import Builder
 Builder.load_file('my.kv')
 
 class MyGridLayout(Widget):
+    
     def press(self):
         name=self.ids.name.text
         food=self.ids.food.text

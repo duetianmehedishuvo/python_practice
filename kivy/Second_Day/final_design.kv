@@ -1,0 +1,90 @@
+<Label>
+    font_size:20
+    bold:True
+    color:"#000000"
+    height:50
+    size_hint_y:None
+
+<TextInput>
+    multiline:False
+    size_hint: [.9, .9]
+    pos_hint: { 'top' : .95, 'right': .95}
+    padding_y:(10,10)
+    font_size:'17dp'
+    height:50
+    size_hint_y:None
+    
+<Button>
+    font_size:28
+    size_hint_y:None
+    height:50
+    background_color:"#000111"
+
+<CustomGridLayout>
+
+    canvas.before:
+        Color:
+            rgba:(240/255,240/255,240/255,1)
+        Rectangle:
+            size:self.size
+            pos:self.pos
+
+    GridLayout:
+        cols:1
+        size:root.width,root.height
+        
+        
+        
+        GridLayout:
+            cols:2
+            padding:15 
+            
+            # for name
+            Label:
+                text:"Name"
+                spacing: 10
+                
+            TextInput:
+                id:name
+                hint_text:"Enter your name."
+                
+                
+            # for email
+            Label:
+                text:"Email"
+            TextInput:
+                id:email
+                hint_text:"Enter your Email."
+                
+            # for age
+            Label:
+                text:"Age"
+            TextInput:
+                id:age
+                hint_text:"Enter your Age."
+                
+            # for checkbox
+            Label:
+                text:"Male"
+            CheckBox:
+                id:gender
+                color:"#000000"
+                height:50
+                size_hint_y:None
+                on_active:root.checkbox_click(self,self.active)
+                
+            # for password
+            Label:
+                text:"Password"
+            TextInput:
+                id:password
+                hint_text:"Enter your Password."
+         
+        Button:
+            text:"Submit"
+            on_press:root.submit()
+        
+                    
+        
+                
+            
